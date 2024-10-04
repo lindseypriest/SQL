@@ -40,7 +40,7 @@ SELECT SUM (price)
 FROM superstore
 ;
 
-#Show a statistic about the price of items in the category of "Kitchen Supplies".
+#Show a statistic about the price of items in the category of 'Kitchen Supplies'.
 SELECT AVG (price), 'Kitchen Supplies'
 FROM superstore
 GROUP BY 'Kitchen Supplies'
