@@ -46,7 +46,7 @@ FROM superstore
 GROUP BY 'Kitchen Supplies'
 ;
 
-#Find highest priced item sold.
+#Find highest priced items sold.
 SELECT MAX (price), item_name
 FROM superstore
 GROUP BY item_name, price
