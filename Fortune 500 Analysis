@@ -58,9 +58,9 @@ VALUES
     ('Company JJ', 'Manufacturing', 370.0, 3100, 1, 20, 12, 7.6),
     ('Company KK', 'Healthcare', 150.2, 3400, 0, 16, 8, 5.3);
 
-# Analysis: 
+#Analysis: 
 
-# Assign all the companies in the Technology industry as "mother friendly workplace", "acceptable", or "abysmal" based on the maternity leave offered. 
+#Assign all the companies in the Technology industry as "mother friendly workplace", "acceptable", or "abysmal" based on the maternity leave offered. 
 SELECT company_name,
 CASE WHEN maternity_leave_weeks >= 10 THEN 'mother friendly workplace'
   WHEN maternity_leave_weeks >= 8 THEN 'acceptable'
@@ -70,22 +70,22 @@ FROM fortune_companies
 WHERE industry='Technology'
 ;
 
-# Which industries have an average revenue of at least $200 billion, and what are their average revenues?
+#Which industries have an average revenue of at least $200 billion, and what are their average revenues?
 SELECT industry, ROUND(AVG(revenue),1) AS avg_revenue_billions
 FROM fortune_companies
 GROUP BY industry
 HAVING avg_revenue_billions>=200
 ;
 
-# Which companies have healthcare benefits *and* at least 20 paid time off days?
+#Which companies have healthcare benefits and at least 20 paid time off days?
 SELECT company_name
 FROM fortune_companies
 WHERE paid_time_off_days>20
 AND healthcare_benefits=1
 ;
 
-# Which company in the Retail industry has the least revenue, and what's their revenue? 
-SELECT company_name, min(revenue)
+#Which company in the Finance industry has the least revenue, and what's their revenue? 
+SELECT company_name, MIN(revenue)
 FROM fortune_companies
-WHERE industry = 'Retail'
+WHERE industry = 'Finance'
 ;
